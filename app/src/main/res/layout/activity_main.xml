@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:background="#000000">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.satir.nozzlealigner.OverlayView
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:orientation="vertical"
+        android:background="#66000000"
+        android:padding="12dp"
+        android:layout_margin="12dp">
+
+        <TextView
+            android:id="@+id/txtDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hedef aranıyor…"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtOffset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="—"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#88000000"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtThreshold"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Kırmızı eşik: 120"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kamera: Ön" />
+
+            <Button
+                android:id="@+id/btnCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Merkez: Kilitli" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekThreshold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nozul çapı (mm):"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/editKnownDia"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:inputType="numberDecimal"
+                android:text="1.5"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AAAAAA" />
+
+            <Button
+                android:id="@+id/btnCalibrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Kalibre" />
+
+            <Button
+                android:id="@+id/btnInvertX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="X↔" />
+
+            <Button
+                android:id="@+id/btnInvertY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Y↕" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
